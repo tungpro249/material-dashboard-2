@@ -9,6 +9,7 @@ import MDProgress from "components/ui/MDProgress";
 
 export default function data() {
   const avatars = (members:any) =>
+    // @ts-ignore
     members.map(([image, name]:any) => (
       <Tooltip key={name} title={name} placeholder="bottom">
         <MDAvatar
