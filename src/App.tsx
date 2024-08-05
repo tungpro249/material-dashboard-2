@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -82,6 +82,16 @@ export default function App() {
       }
       return null;
     });
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const user = localStorage.getItem("currentUser");
+  //   if (user) {
+  //
+  //   } else {
+  //     navigate("/authentication/sign-in");
+  //   }
+  // }, [localStorage.getItem("currentUser")]);
 
   return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
@@ -99,7 +109,8 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="/" element={<Navigate to={"/dashboard"} />} />;
+        <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
       </Routes>
     </ThemeProvider>
   );
