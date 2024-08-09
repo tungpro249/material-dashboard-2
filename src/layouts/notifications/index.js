@@ -12,7 +12,7 @@ import MDButton from "components/ui/MDButton";
 import MDSnackbar from "components/ui/MDSnackbar";
 
 // Material Dashboard 2 React example components
-import DashboardLayout from "components/customizes/LayoutContainers/DashboardLayout";
+import DashboardLayout from "components/customizes/DashboardLayout";
 import DashboardNavbar from "components/customizes/Navbars/DashboardNavbar";
 import Footer from "components/customizes/Footer";
 

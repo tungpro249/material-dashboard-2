@@ -15,6 +15,7 @@ import MDButton from "components/ui/MDButton";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
+// @ts-ignore
 import bgImage from "assets/images/bg-sign-up-cover.jpeg";
 
 function Cover() {

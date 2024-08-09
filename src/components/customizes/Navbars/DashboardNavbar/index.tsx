@@ -113,18 +113,6 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({ absolute = false, lig
               >
                 <Icon sx={iconsStyle}>settings</Icon>
               </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                // sx={navbarIconButton}
-                aria-controls="notification-menu"
-                aria-haspopup="true"
-                variant="contained"
-                onClick={handleOpenMenu}
-              >
-                <Icon sx={iconsStyle}>notifications</Icon>
-              </IconButton>
             </MDBox>
           </MDBox>
         )}

@@ -24,6 +24,7 @@ import MDButton from "components/ui/MDButton";
 import BasicLayout from "layouts/authentication/components/BasicLayout";
 
 // Images
+// @ts-ignore
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 function Basic() {

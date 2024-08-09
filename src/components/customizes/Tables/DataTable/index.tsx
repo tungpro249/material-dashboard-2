@@ -27,7 +27,7 @@ import DataTableBodyCell from "components/customizes/Tables/DataTable/DataTableB
 import { Checkbox } from "@mui/material";
 import { hideLoading, showLoading, useSnackbarController } from "../../../../context/snackbarContext";
 import { validateTextField } from "../../ValidateForm"; // @ts-ignore
-import { useAuthenController } from "../../../../context/authenContext";
+// import { useAuthenController } from "../../../../context/authenContext";
 import { MAX_LENGTH_STRING } from "../../../../constants/app";
 import { useLocation } from "react-router-dom"; // eslint-disable-next-line react/prop-types
 
@@ -81,7 +81,7 @@ function DataTable({
    itemCount,
    isTogglePage = false,
  }: Props) {
-  const defaultValue = entriesPerPage.defaultValue ? entriesPerPage.defaultValue : 10;
+  const defaultValue = entriesPerPage.defaultValue ? entriesPerPage.defaultValue : 15;
   const entries = entriesPerPage.entries
     ? entriesPerPage.entries.map((el: any) => el.toString())
     : ["5", "10", "15", "20", "25"];
@@ -98,18 +98,18 @@ function DataTable({
   const spanRef = useRef(null);
   const location = useLocation();
   // @ts-ignore
-  const [authController] = useAuthenController();
+  // const [authController] = useAuthenController();
 
   const [token, setToken] = useState(null);
 
-  useEffect(() => {
-    if (token !== authController.token) {
-      setToken(authController.token);
-    }
-  }, [authController.token]);
+  // useEffect(() => {
+  //   if (token !== authController.token) {
+  //     setToken(authController.token);
+  //   }
+  // }, [authController.token]);
 
   // @ts-ignore
-  const [, snackbarDispatch] = useSnackbarController();
+  // const [, snackbarDispatch] = useSnackbarController();
 
   const tableInstance = useTable(
     {
@@ -302,7 +302,7 @@ function DataTable({
 
   const loadData = async (isResetPage: boolean) => {
     if (fetchData) {
-      showLoading(snackbarDispatch);
+      // showLoading(snackbarDispatch);
       setIsLoaded(false);
       const startTime = new Date().getTime();
       await fetchData({
@@ -313,7 +313,7 @@ function DataTable({
       const endTime = new Date().getTime();
       setTimeout(() => {
         setIsLoaded(true);
-        hideLoading(snackbarDispatch);
+        // hideLoading(snackbarDispatch);
       }, 500 - (endTime - startTime));
     }
   };
@@ -395,26 +395,26 @@ function DataTable({
     <>
       {entriesPerPage || canSearch ? (
         <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-          {entriesPerPage && (
-            <MDBox display="flex" alignItems="center">
-              <Autocomplete
-                disableClearable
-                value={pageSize.toString()}
-                options={entries}
-                onChange={(event, newValue) => {
-                  setEntriesPerPage(parseInt(newValue, 10));
-                }}
-                size="small"
-                sx={{ width: "5rem" }}
-                renderInput={(params) => <MDInput {...params} />}
-                ListboxProps={{ style: { maxHeight: "15rem" } }}
-                noOptionsText="Không có dữ liệu"
-              />
-              <MDTypography variant="caption" color="secondary">
-                &nbsp;&nbsp;Hiển thị số kết quả của trang
-              </MDTypography>
-            </MDBox>
-          )}
+          {/*{entriesPerPage && (*/}
+          {/*  <MDBox display="flex" alignItems="center">*/}
+          {/*    <Autocomplete*/}
+          {/*      disableClearable*/}
+          {/*      value={pageSize.toString()}*/}
+          {/*      options={entries}*/}
+          {/*      onChange={(event, newValue) => {*/}
+          {/*        setEntriesPerPage(parseInt(newValue, 10));*/}
+          {/*      }}*/}
+          {/*      size="small"*/}
+          {/*      sx={{ width: "5rem" }}*/}
+          {/*      renderInput={(params) => <MDInput {...params} />}*/}
+          {/*      ListboxProps={{ style: { maxHeight: "15rem" } }}*/}
+          {/*      noOptionsText="Không có dữ liệu"*/}
+          {/*    />*/}
+          {/*    <MDTypography variant="caption" color="secondary">*/}
+          {/*      &nbsp;&nbsp;Hiển thị số kết quả của trang*/}
+          {/*    </MDTypography>*/}
+          {/*  </MDBox>*/}
+          {/*)}*/}
           {canSearch && (
             <MDBox width="12rem" ml="auto">
               <MDInput
