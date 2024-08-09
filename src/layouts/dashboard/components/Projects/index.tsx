@@ -80,6 +80,7 @@ function Projects() {
           isSorted={false}
           noEndBorder
           entriesPerPage={false}
+          showCheckAll={false}
         />
       </MDBox>
     </Card>

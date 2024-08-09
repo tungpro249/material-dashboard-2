@@ -9,7 +9,7 @@ import MDBox from "components/ui/MDBox";
 
 // Material Dashboard 2 React example components
 import DefaultNavbar from "components/customizes/Navbars/DefaultNavbar";
-import PageLayout from "components/customizes/LayoutContainers/PageLayout";
+import PageLayout from "components/customizes/PageLayout";
 
 // Authentication pages components
 import Footer from "layouts/authentication/components/Footer";
